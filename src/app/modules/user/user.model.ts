@@ -6,12 +6,12 @@ export interface IUser{
     name: string,
     email: string,
     password: string,
-    role: IUserRole,
-    isActive: boolean,
-    isDeleted: boolean,
-    createdAt: Date,
-    updatedAt: Date,
-    deletedAt: Date,
+    role?: IUserRole,
+    isActive?: boolean,
+    isDeleted?: boolean,
+    createdAt?: Date,
+    updatedAt?: Date,
+   
   
 }
 
@@ -33,6 +33,7 @@ const userSchema=new Schema<IUser>({
         type: String,
         required: true,
         enum: ["student", "teacher", "admin"],
+        default: "student"
     },
     isActive: {
         type: Boolean,
