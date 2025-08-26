@@ -3,12 +3,16 @@ import { Router } from "express";
 
 const router = Router()
 
+const userRoute = () => {
+    return 'hello'
+}
+
 const moduleRoutes = [
     {
         path: '/',
-        route: ""
+        route:userRoute
     }
-    
+
 ]
 
 moduleRoutes.forEach(route => router.use(route.path, route.route as any))
